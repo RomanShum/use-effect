@@ -5,7 +5,7 @@ function Details(props) {
   const [id, setId] = useState(0);
   const [load, setLoad] = useState(false);
 
-  const intervalRef = useRef();
+  const idRef = useRef();
 
   useEffect(() => {
     setId(props.info.id);
@@ -13,9 +13,9 @@ function Details(props) {
 
   useEffect(() => {
     const new_id = props.info.id;
-    if (new_id !== intervalRef.current) {
+    if (new_id !== idRef.current) {
       setId(new_id);
-      intervalRef.current = new_id;
+      idRef.current = new_id;
       setLoad(true);
       detailsLoad(new_id);
     }
