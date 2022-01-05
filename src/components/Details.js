@@ -19,7 +19,6 @@ function Details(props) {
       setLoad(true);
       detailsLoad(new_id);
     }
-    return setDetailsData({});
   }, [props.info]);
 
   const detailsLoad = () => {
@@ -34,11 +33,11 @@ function Details(props) {
   };
 
   if (load) {
-    return "Загрузка";
+    return <div className="load">Загрузка</div>;
   }
 
   return (
-    <div>
+    <div className="details">
       {detailsData.id !== undefined ? (
         <>
           <img src={detailsData.avatar} alt={detailsData.name} />
